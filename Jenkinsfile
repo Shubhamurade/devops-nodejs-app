@@ -10,9 +10,13 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
-                script {
-                    docker.build("devops-nodejs-app:latest")
-                }
+                sh 'docker build -t devops-nodejs-app:latest .'
+            }
+        }
+
+        stage('Run Container Test') {
+            steps {
+                sh 'docker run -d -p 3001:3000 devops-nodejs-app:latest'
             }
         }
     }
