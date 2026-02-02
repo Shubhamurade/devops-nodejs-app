@@ -14,9 +14,20 @@ pipeline {
             }
         }
 
-        stage('Run Container Test') {
+        stage('Deploy to EC2') {
             steps {
-                sh 'docker run -d -p 3001:3000 devops-nodejs-app:latest'
+                sh '''
+                ssh -o StrictHostKeyChecking=no \
+                    -i /var/jenkins_home/ec2-key.pem \
+                    ec2-user@3.7.68.247 "
+                        docker stop nodejs-app || true
+                        docker rm nodejs-app || true
+                        docker run -d \
+                          --name nodejs-app \
+                          -p 3000:3000 \
+                          devops-nodejs-app:latest
+                    "
+                '''
             }
         }
     }
