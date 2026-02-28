@@ -53,8 +53,8 @@ devops-nodejs-app/
 
 ### 1️⃣ Clone the Repository
 
-# git clone https://github.com/<your-username>/devops-nodejs-app.git  
-# cd devops-nodejs-app  
+git clone https://github.com/<your-username>/devops-nodejs-app.git  
+cd devops-nodejs-app  
 
 ---
 
@@ -178,5 +178,6 @@ docker system prune -a
 
 Shubham Urade  
 DevOps | Cloud | Linux | Docker | Jenkins
+
 
 
