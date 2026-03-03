@@ -60,7 +60,7 @@ devops-nodejs-app/
 
 ### 2️⃣ Test Node.js App Locally (Optional)
 
-npm install  
+```npm install```
 node app.js  
 
 Open in browser:  
@@ -178,6 +178,7 @@ docker system prune -a
 
 Shubham Urade  
 DevOps | Cloud | Linux | Docker | Jenkins
+
 
 
 
